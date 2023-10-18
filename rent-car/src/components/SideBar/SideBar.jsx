@@ -14,6 +14,7 @@ export const SideBar = () => {
         <label htmlFor={inputMileageId}>Сar mileage / km</label>
         <input id={inputMileageId} type="text"></input>
         <input id={inputMileageId} type="text"></input>
+        <button type="submit">Search</button>
       </form>
     </aside>
   );
