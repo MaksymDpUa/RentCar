@@ -1,1 +1,1 @@
-export const selectAdverts = (state) => state.adverts.isLoggedIn;
+export const selectAdverts = (state) => state.adverts.adverts;
