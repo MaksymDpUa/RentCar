@@ -2,18 +2,20 @@ import { nanoid } from "nanoid";
 import { useSelector } from "react-redux";
 import { selectAdverts } from "../../redux/adverts/advertsSelectors";
 import { AdvertCard } from "../AdvertCard/AdvertCard";
-import css from "./AdvertList.module.css";
+
+// import css from "./AdvertList.module.css";
+import { AdvertsListEl } from "./AdvertList.styled";
 
 export const AdvertList = () => {
   const catalog = useSelector(selectAdverts);
 
   return (
-    <ul className={css.advertList}>
+    <AdvertsListEl>
       {catalog.map((advert) => {
         const advertKey = nanoid();
-        console.log(advert);
+        // console.log(advert);
         return <AdvertCard key={advertKey} {...advert} />;
       })}
-    </ul>
+    </AdvertsListEl>
   );
 };

@@ -12,7 +12,6 @@ const advertsSlice = createSlice({
     builder
       // .addCase(fetchContacts.pending, pendingReducer)
       .addCase(fetchAdverts.fulfilled, (state, action) => {
-        console.log(action);
         state.adverts = action.payload;
         // state.token = action.payload.token;
         // state.isLoggedIn = true;
