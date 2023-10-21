@@ -1,21 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchAdverts } from "./advertsOperations";
+// import { createSlice } from "@reduxjs/toolkit";
+// import { fetchAdverts } from "./advertsOperations";
 
-const initialState = {
-  adverts: [],
-};
+// const initialState = {
+//   adverts: [],
+// };
 
-const advertsSlice = createSlice({
-  name: "adverts",
-  initialState,
-  extraReducers: (builder) =>
-    builder
+// const advertsSlice = createSlice({
+//   name: "adverts",
+//   initialState,
+//   extraReducers: (builder) =>
+//     builder
       // .addCase(fetchContacts.pending, pendingReducer)
-      .addCase(fetchAdverts.fulfilled, (state, action) => {
-        state.adverts = action.payload;
+      // .addCase(fetchAdverts.fulfilled, (state, action) => {
+      //   state.adverts = action.payload;
         // state.token = action.payload.token;
         // state.isLoggedIn = true;
-      }),
+      // }),
   // .addCase(fetchContacts.rejected, rejectedReducer)
   // .addCase(addContact.pending, pendingReducer)
   // .addCase(addContact.fulfilled, addContactFulfilledReducer)
@@ -52,6 +52,6 @@ const advertsSlice = createSlice({
   //   state.isRefreshing = false;
   // },
   // },
-});
+// });
 
-export const advertsReducer = advertsSlice.reducer;
+// export const advertsReducer = advertsSlice.reducer;

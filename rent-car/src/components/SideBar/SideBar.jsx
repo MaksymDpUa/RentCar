@@ -7,18 +7,49 @@ import {
   ShevronBtn,
   Input,
 } from "./SideBar.styled";
-import shewron from "../../asset/shevron.svg";
+// import shewron from "../../asset/shevron.svg";
 import { IoIosArrowDown } from "react-icons/io";
+import { useState } from "react";
 
-export const SideBar = () => {
+export const SideBar = ({ handleChangeQuery }) => {
+  const [make, setMake] = useState("");
+  const [rentalPrice, setRentalPrice] = useState("");
+  const [mileageFrom, setMileageFrom] = useState("");
+  const [mileageTo, setMileageTo] = useState("");
+
+  const handleInputChange = (e) => {
+    switch (e.target.name) {
+      case "brand":
+        setMake(e.target.value);
+        break;
+      case "price":
+        setRentalPrice(e.target.value);
+        break;
+      case "from":
+        setMileageFrom(e.target.value);
+        break;
+      case "to":
+        setMileageTo(e.target.value);
+        break;
+      default:
+        console.log("Something wrong");
+    }
+  };
+
   const inputModelId = nanoid();
   const inputPriceId = nanoid();
   const inputMileageId = nanoid();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-    console.log(form.name);
+    const searchQuery = {
+      make,
+      rentalPrice: `$${rentalPrice}`,
+      mileageFrom,
+      mileageTo,
+    };
+    handleChangeQuery(searchQuery);
+
   };
 
   return (
@@ -31,6 +62,8 @@ export const SideBar = () => {
             type="text"
             name="brand"
             placeholder="Enter the text"
+            onChange={handleInputChange}
+            value={make}
           ></Input>
           <ShevronBtn type="button">
             <IoIosArrowDown />
@@ -41,19 +74,33 @@ export const SideBar = () => {
           Price/ 1 hour
           <Input
             id={inputPriceId}
-            type="text"
+            type="number"
             name="price"
             placeholder="To $"
+            value={rentalPrice}
+            onChange={handleInputChange}
           ></Input>
         </FieldLabel>
 
         <FieldLabel htmlFor={inputMileageId}>
           Сar mileage / km
           <InputsThumb>
-            <Input id={inputMileageId} type="text" name="from">
+            <Input
+              id={inputMileageId}
+              type="number"
+              name="from"
+              value={mileageFrom}
+              onChange={handleInputChange}
+            >
               {/* From */}
             </Input>
-            <Input id={inputMileageId} type="text" name="to">
+            <Input
+              id={inputMileageId}
+              type="number"
+              name="to"
+              value={mileageTo}
+              onChange={handleInputChange}
+            >
               {/* To */}
             </Input>
           </InputsThumb>

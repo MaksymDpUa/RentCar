@@ -1,10 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { advertsReducer } from "./adverts/advertsSlice";
+// import { configureStore } from "@reduxjs/toolkit";
+// import { advertsReducer } from "./adverts/advertsSlice";
 
-export const store = configureStore({
-  reducer: {
-    adverts: advertsReducer,
+// export const store = configureStore({
+//   reducer: {
+//     adverts: advertsReducer,
 
-  },
-});
+//   },
+// });
 
