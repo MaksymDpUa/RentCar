@@ -44,7 +44,7 @@ export const SideBar = ({ handleChangeQuery }) => {
     e.preventDefault();
     const searchQuery = {
       make,
-      rentalPrice: `$${rentalPrice}`,
+      rentalPrice: Number(rentalPrice),
       mileageFrom,
       mileageTo,
     };
